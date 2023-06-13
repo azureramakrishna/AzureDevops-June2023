@@ -1,0 +1,34 @@
+AzureDevops - June 2023
+
+JSON Basics:
+-----------
+Why IAC infrastructure as a code?
+
+500 Storage accounts 
+Automated way of deployment
+Reusable 
+Predictable 
+
+DEV:   Aravind left the org
+5 Linux VM
+2 SQL DB
+7 Subnets
+2 VNETs
+7 NSG
+VNET peerings 
+
+Supriya:
+
+TEST
+
+Data types:
+
+String = "Welcome to Azure"
+Number = 12
+Floating = 15.34
+Boolean = True / False
+
+Getting started with ARM Templates:
+----------------------------------
+Download the VSCode: https://code.visualstudio.com/download
+VSCode Extension: Azure Resource Manager (ARM) Tools
