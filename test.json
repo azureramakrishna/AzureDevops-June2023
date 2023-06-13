@@ -1,0 +1,49 @@
+{
+    "TrainingModule": "Azure Admin with AzureDevops",
+    "InstituteName": "SAANVIK IT",
+    "TrainerName": "Ramakrishna",
+    "ContactNumber": 9513184144,
+    "Address": {
+        "DoorNo": 123,
+        "Area": "Kukatpally",
+        "City": "Hyderabad",
+        "Pincode": 509765
+    },
+    "Participants": [
+        {
+            "Name": "Aravind",
+            "location": "UK",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Supriya",
+            "location": "UK",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Kaushik",
+            "location": "India",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Prashanth",
+            "location": "UK",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Rini",
+            "location": "UK",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Robert",
+            "location": "India",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Venkat",
+            "location": "India",
+            "IsAzureAdmin": false
+        }
+    ]
+}
