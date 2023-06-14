@@ -3,7 +3,22 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storage_account_name": {
-            "value": "saanvikitjune2023"
+            "value": "SAANVIKITJUNE2023"
+        },
+        "virtual_network_name": {
+            "value": "saanvikit-vnet-01"
+        },
+        "virtual_machine_name": {
+            "value": "saanvikit-vm"
+        },
+        "virtual_machine_size": {
+            "value": "Standard_Ds1_V2"
+        },
+        "adminUser": {
+            "value": "azureuser"
+        },
+        "adminPassword": {
+            "value": "Azuredevops@12345"
         }
     }
 }

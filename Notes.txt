@@ -32,3 +32,22 @@ Getting started with ARM Templates:
 ----------------------------------
 Download the VSCode: https://code.visualstudio.com/download
 VSCode Extension: Azure Resource Manager (ARM) Tools
+
+
+Portal
+Powershell
+AzureCLI
+
+IAC:
+ARMTemplates
+Terraform 
+Bicep
+
+Powershell command to deploy ARMTempaltes:
+
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell
+
+New-AzResourceGroupDeployment -ResourceGroupName ARMTemplates -TemplateFile .\template.json -TemplateParameterFile .\parameters.json -Verbose
+
+LAB: Add the datadisk to VM
+	 https://learn.microsoft.com/en-us/azure/virtual-machines/using-managed-disks-template-deployments
