@@ -18,7 +18,12 @@
             "value": "azureuser"
         },
         "adminPassword": {
-            "value": "Azuredevops@12345"
-        }
+            "reference": {
+              "keyVault": {
+                "id": "/subscriptions/6e4924ab-b00c-468f-ae01-e5d33e8786f8/resourceGroups/cloud-shell-storage-centralindia/providers/Microsoft.KeyVault/vaults/saanvikitkv1"
+              },
+              "secretName": "WinVMPassword"
+            }
+          }
     }
 }

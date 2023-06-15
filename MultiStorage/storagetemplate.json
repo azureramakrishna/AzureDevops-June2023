@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+         "storage_account_name": {
+           "type": "string",
+           "metadata": {
+                "description": "Name of the storage account"
+            }
+        },
+        "storage_account_sku": {
+           "type": "string",
+           "metadata": {
+                "description": "SKU of the storage account"
+            },
+            "allowedValues": [
+                "Premium_LRS",
+                "Premium_ZRS",
+                "Standard_GRS",
+                "Standard_GZRS",
+                "Standard_LRS",
+                "Standard_RAGRS",
+                "Standard_RAGZRS",
+                "Standard_ZRS"
+            ],
+            "defaultValue": "Standard_LRS"        
+        },
+        "count_value": {
+           "type": "int"
+        }
+    },
+    "variables": {
+         "tags": {
+            "project": "SAANVIK IT",
+            "createdby": "Ramakrishna",
+            "environment": "DEV"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[concat(toLower(parameters('storage_account_name')),copyIndex(1))]",
+            "location": "[resourceGroup().location]",
+            "apiVersion": "2018-07-01",
+            "tags": "[variables('tags')]",
+            "copy": {
+            "name": "storageCopy",
+            "count": "[parameters('count_value')]"
+            },
+            "sku": {
+                "name": "[parameters('storage_account_sku')]"
+            },
+            "kind": "StorageV2",
+            "properties": {}
+        }
+    ],
+    "outputs": {}
+}

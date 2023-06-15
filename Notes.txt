@@ -51,3 +51,8 @@ New-AzResourceGroupDeployment -ResourceGroupName ARMTemplates -TemplateFile .\te
 
 LAB: Add the datadisk to VM
 	 https://learn.microsoft.com/en-us/azure/virtual-machines/using-managed-disks-template-deployments
+	 
+	 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter?tabs=azure-cli
+	 
+Multi Resource Deployment using ARMTemplates:
+--------------------------------------------

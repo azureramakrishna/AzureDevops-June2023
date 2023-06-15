@@ -51,9 +51,14 @@
         }
     },
     "variables": {
+        "virtual_network": {
         "virtual_network_address": ["172.16.0.0/24"],
         "subnet_name": "saanvikit-snet-01",
-        "subnet_address": "172.16.0.0/25",
+        "subnet_address": "172.16.0.0/25"
+        },
+        // "virtual_network_address": ["172.16.0.0/24"],
+        // "subnet_name": "saanvikit-snet-01",
+        // "subnet_address": "172.16.0.0/25",
         "tags": {
             "project": "SAANVIK IT",
             "createdby": "Ramakrishna",
@@ -87,13 +92,13 @@
             ],
             "properties": {
                 "addressSpace": {
-                    "addressPrefixes": "[variables('virtual_network_address')]"
+                    "addressPrefixes": "[variables('virtual_network').virtual_network_address]"
                 },
                 "subnets": [
                     {
-                        "name": "[variables('subnet_name')]",
+                        "name": "[variables('virtual_network').subnet_name]",
                         "properties": {
-                            "addressPrefix": "[variables('subnet_address')]",
+                            "addressPrefix": "[variables('virtual_network').subnet_address]",
                             "networkSecurityGroup": {
                                 "id": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('network_security_group_name'))]"
                             }
@@ -167,7 +172,7 @@
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtual_network_name'), variables('subnet_name'))]"
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtual_network_name'), variables('virtual_network').subnet_name)]"
                             },
                             "publicIPAddress": {
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicip_name'))]"
@@ -178,11 +183,27 @@
             }
         },
         {
+            "type": "Microsoft.Compute/disks",
+            "apiVersion": "2018-06-01",
+            "name": "[concat(parameters('virtual_machine_name'),'-datadisk1')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "properties": {
+                "creationData": {
+                    "createOption": "Empty"
+                },
+                "diskSizeGB": 10
+            }
+        },
+        {
             "name": "[parameters('virtual_machine_name')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2017-03-30",
             "location": "[resourceGroup().location]",
             "dependsOn": [
+                "[resourceId('Microsoft.Compute/disks',concat(parameters('virtual_machine_name'),'-datadisk1'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('network_interface_name'))]"
             ],
             "tags": "[variables('tags')]",
@@ -206,7 +227,17 @@
                         "name": "[concat(parameters('virtual_machine_name'),'-','osdisk')]",
                         "caching": "ReadWrite",
                         "createOption": "FromImage"
-                    }
+                    },
+                     "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtual_machine_name'),'-datadisk1')]",
+                            "createOption": "attach",
+                            "managedDisk": {
+                                "id": "[resourceId('Microsoft.Compute/disks/', concat(parameters('virtual_machine_name'),'-datadisk1'))]"
+                            }
+                        }
+                    ]
                 },
                 "networkProfile": {
                     "networkInterfaces": [
