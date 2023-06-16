@@ -1,5 +1,5 @@
 #Login-AzAccount
 
-New-AzResourceGroup -Name arm-storage-group -Location Eastus
+#New-AzResourceGroup -Name arm-group -Location Eastus
 
-New-AzResourceGroupDeployment -ResourceGroupName arm-storage-group -TemplateFile .\storagetemplate.json -TemplateParameterFile .\storageparameters.json -Verbose
+New-AzResourceGroupDeployment -ResourceGroupName arm-group -TemplateFile .\storagetemplate.json -TemplateParameterFile .\storageparameters.json -Mode Complete -Verbose

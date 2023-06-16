@@ -26,7 +26,7 @@
             "defaultValue": "Standard_LRS"        
         },
         "count_value": {
-           "type": "int"
+            "type": "int"
         }
     },
     "variables": {
