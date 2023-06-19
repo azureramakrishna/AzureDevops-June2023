@@ -32,6 +32,7 @@ Getting started with ARM Templates:
 ----------------------------------
 Download the VSCode: https://code.visualstudio.com/download
 VSCode Extension: Azure Resource Manager (ARM) Tools
+				  ARM Template Viewer
 
 
 Portal
@@ -60,3 +61,51 @@ Multi Resource Deployment using ARMTemplates:
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-multiple-instances?tabs=CLI%2Cazure-cli
+
+ARMTemplates functions:
+
+resourcegroup().location
+
+
+Terraform: IAC 
+
+ARMTemplates											Terraform 
+------------											---------
+1. IAC Tool 											1. IAC Tool 
+2. Specific to Azure 									2. Open source - Azure, AWS, GCP, OCI, datacenter etc 
+3. Format - JSON 										3. Format - HCL (Hashicorp configuration language)
+4. Extension - .json 									4. Extension - .tf
+5. template.json 										5. main.tf
+	parameters.json											variables.tf
+6. Schema												6. Terraform building blocks:
+	contentversion												provider
+	parameters													resources 
+	variables													outputs
+	resources 
+	outputs
+7. New-AzResourceGroupDeployment						7. Terraform life cycle 
+	-ResourceGroupName '' `										Terraform init
+	-TemplateFile '' `											Terraform fmt
+	-TemplateParameterFile '' `									Terraform validate
+	-Verbose													Terraform plan
+																Terraform apply 
+																Terraform destroy
+
+Getting started with Terraform:
+------------------------------
+Download terraform - https://developer.hashicorp.com/terraform/downloads
+Extract the zip file -> terraform.exe
+Copy the terraform.exe file to C:\Windows
+to test it -> open the cmd --> type terraform 
+
+Go to vscode -> install extensions: HashiCorp Terraform & Azure Terraform
+
+Terraform providers:
+-------------------
+Terraform Providers: https://registry.terraform.io/browse/providers
+
+Azure - azurerm
+AWS   - aws
+GCP   - google
+
+Terraform variables types: https://developer.hashicorp.com/terraform/language/expressions/types
