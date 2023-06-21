@@ -109,3 +109,7 @@ AWS   - aws
 GCP   - google
 
 Terraform variables types: https://developer.hashicorp.com/terraform/language/expressions/types
+
+
+Azure Terraform provider github release notes:
+https://github.com/hashicorp/terraform-provider-azurerm/blob/main/CHANGELOG.md
