@@ -113,3 +113,10 @@ Terraform variables types: https://developer.hashicorp.com/terraform/language/ex
 
 Azure Terraform provider github release notes:
 https://github.com/hashicorp/terraform-provider-azurerm/blob/main/CHANGELOG.md
+
+Terraform Datasources:
+---------------------
+
+Existing ResourceGroup 
+Existing Virtual network
+Existing Subnet 
