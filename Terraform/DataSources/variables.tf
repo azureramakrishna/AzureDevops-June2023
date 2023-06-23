@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   type        = string
   description = "Resource group name"
-  default     = "test-group"
+  default     = "volvo-resource-group"
 }
 
 # variable "location" {

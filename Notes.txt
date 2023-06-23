@@ -120,3 +120,10 @@ Terraform Datasources:
 Existing ResourceGroup 
 Existing Virtual network
 Existing Subnet 
+
+Terraform Import: https://gmusumeci.medium.com/how-to-import-an-existing-azure-resource-in-terraform-6d585f93ea02
+
+copy.index()
+count.index
+
+MultiVM deployment ref: https://github.com/azureramakrishna/AzureDevops-Jan2023/blob/main/Terraform/MultiVM/main.tf

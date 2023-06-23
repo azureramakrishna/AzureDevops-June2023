@@ -103,6 +103,15 @@ resource "azurerm_network_interface" "example" {
   }
 }
 
+
+resource "azurerm_managed_disk" "example" {
+
+}
+
+resource "azurerm_virtual_machine_data_disk_attachment" "example" {
+
+}
+
 resource "azurerm_windows_virtual_machine" "example" {
   depends_on          = [azurerm_network_interface.example]
   name                = var.virtual_machine_name
