@@ -127,3 +127,43 @@ copy.index()
 count.index
 
 MultiVM deployment ref: https://github.com/azureramakrishna/AzureDevops-Jan2023/blob/main/Terraform/MultiVM/main.tf
+
+
+develop 					main 
+							cherry pick
+commit1 (change1)
+commit2
+commit3
+
+git tags
+
+dev
+test
+prod 
+
+version 1
+
+project
+
+Azure Pipelines for Terraform:
+-----------------------------
+
+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
+
+Azure Pipelines Library:
+-----------------------
+
+$vnet1 = Get-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName TestResourceGroup
+
+
+develop 	-->  	main (cherry-pick)
+
+commit1 
+commit2 
+commit3 
+commit4 
+
+
+Azure YAML Pipelines:
+--------------------
+Pipeline as a code 

@@ -1,0 +1,28 @@
+---
+TrainingModule: 'Azure Admin with AzureDevops'
+InstitueName: 'SAANVIK IT'
+TrainerName: Ramakrishna
+ContactNumber: 9513184144
+Address: 
+  DoorNo: 123
+  Area: Kukatpally
+  city: Hyderabad
+  Pincode: 509765
+
+Participants: 
+  - Name: Aravind
+    Loation: UK
+    IsAzureAdmin: true
+
+  - Name: Supriya
+    Loation: UK
+    IsAzureAdmin: true
+
+  - Name: Kaushik
+    Loation: India
+    IsAzureAdmin: true
+
+  - Name: Prashanth
+    Loation: UK
+    IsAzureAdmin: true
+
