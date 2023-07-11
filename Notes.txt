@@ -129,6 +129,7 @@ count.index
 MultiVM deployment ref: https://github.com/azureramakrishna/AzureDevops-Jan2023/blob/main/Terraform/MultiVM/main.tf
 
 
+<<<<<<< HEAD
 develop 					main 
 							cherry pick
 commit1 (change1)
@@ -167,3 +168,28 @@ commit4
 Azure YAML Pipelines:
 --------------------
 Pipeline as a code 
+=======
+Agenda:
+-------
+Terraform Modules - Reusing the exesting configuration
+
+Local module
+Remote module
+
+
+Module - main.tf & variables.tf 
+
+Dev	
+Test	
+Prod	
+
+terraform variables types
+https://developer.hashicorp.com/terraform/language/expressions/types
+
+terraform modules overview
+https://developer.hashicorp.com/terraform/language/modules
+
+Module sources
+https://developer.hashicorp.com/terraform/language/modules/sources#github
+
+>>>>>>> 7824d0462e0e71c3ce575d7748e5dbaa59e77013

@@ -1,28 +1,3 @@
-#azurerm provider version
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "3.50.0"
-    }
-  }
-}
-
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-}
-
-# terraform backend state
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "cloud-shell-storage-centralindia"
-    storage_account_name = "csg10032000825eeb72"
-    container_name       = "tfstate"
-    key                  = "demo.terraform.tfstate"
-  }
-}
-
 # Create a resource group
 resource "azurerm_resource_group" "example" {
   name     = var.resource_group_name
@@ -129,14 +104,3 @@ resource "azurerm_windows_virtual_machine" "example" {
   }
 }
 
-output "storage_account_endpoint" {
-  value = azurerm_storage_account.example.primary_blob_endpoint
-}
-
-output "winvm_pubip" {
-  value = azurerm_public_ip.example.ip_address
-}
-
-output "winvm_privateip" {
-  value = azurerm_network_interface.example.private_ip_addresses
-}
