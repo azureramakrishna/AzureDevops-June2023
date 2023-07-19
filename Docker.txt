@@ -1,0 +1,135 @@
+Install Docker on Ubuntu:
+-------------------------
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
+	1  sudo apt-get update
+    2  sudo apt-get install     ca-certificates     curl     gnupg
+    3  sudo mkdir -m 0755 -p /etc/apt/keyrings
+    4  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    5  echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    6  sudo apt-get update
+    7  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    8  docker
+    9  systemctl status docker
+
+
+Docker Commands:
+---------------
+systemctl status docker
+sudo docker version
+docker images
+docker run hello-world
+docker images
+docker pull ubuntu
+docker images
+docker ps
+docker ps -a
+docker run ubuntu
+docker ps
+docker ps -a
+docker run -itd ubuntu (interactive terminal ditach)
+docker run -it ubuntu (you will be inside the container)
+docker ps
+docker ps -a
+docker run -it ubuntu
+docker attach <contanierid>
+ctrl p q to safe exit
+exit to exit from container
+
+----------
+docker hub singup (https://hub.docker.com)
+docker pull ubuntu:20.10
+docker pull ubuntu:16.04
+docker images 
+docker run -itd --name myubuntu ubuntu:16.04
+docker ps
+docker ps -a
+docker stop containerid/name
+docker ps
+docker start containerid/name (first 4 letters of container)
+docker attach continerid/name (to get inside the container)
+
+vim 
+apt-get update
+apt-get install vim
+apt-get intall git
+apt-get install sudo -y
+apt-get install curl -y
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+ctrl p + q (safe exit)
+docker ps
+create an image out of container:
+docker commit containerid azureramakrishna(dockerid)/myubuntu:1.0
+docker images
+docker run -itd --name customubuntu imageid
+docker ps
+docker attach customubuntu
+vim (to check whether vim is present)
+safe exit
+docker login
+username:
+password:
+
+docker push imagename:1.0
+docker ps
+docker attach containerid
+apt-get install nginx
+safe exit
+docker commit containerid azureramakrishna(dockerid)/myubuntu:2.0
+docker push deepakaazure/myubuntu:2.0
+
+docker images
+docker image inspect imagename:2.0 (see layers)
+
+docker images
+docker tag existingimagename:1.0  azureramakrishna(dockerid)/vimubuntu:1.0 (rename the image)
+docker images
+
+docker rmi imagename:1.0  (to delete image locally)
+docker rmi image1 image2 image3 --force (force deletion of multiple images)
+docker rm containerid (to delete the container )
+docker inspect containerid/name (Details about the container)
+docker stats (Monitor the container CPU & Memory of the container)
+
+docker file:
+-----------
+Example:
+	# syntax=docker/dockerfile:1
+   
+	FROM node:18-alpine
+	WORKDIR /app
+	COPY . .
+	RUN yarn install --production
+	CMD ["node", "src/index.js"]
+	EXPOSE 3000
+
+mkdir dockerimages
+cd dockerimages
+vi dockerfile
+	From ubunt (base image)
+	Maintainer Ramakrishna  (who is the author if it) "Rama Krishna" for lenthy names
+	RUN apt-get update
+	RUN apt-get install vim -y								 (RUN will execute before the container creation)
+	CMD /bin/echo "Container with VIM installed is Ready!!"  (CMD will run after creating container)
+
+docker build -t azureramakrishna(dockerid)/<imagename>:1.0 .
+docker images
+docker run -it <imageid> --name <nameofcontainer>
+docker run -it <imageid> --name <nameofcontainer> /bin/bash
+
+
+git clone git clone https://github.com/Azure-Samples/aci-helloworld.git
+git clone https://github.com/Azure-Samples/aci-helloworld.git
+docker build ./aci-helloworld -t aci-tutorial-app
+docker images
+docker run -d -p 8080:80 aci-tutorial-app
+docker ps
+docker images
+az acr login --name test878
+docker images
+docker tag aci-tutorial-app test878.azurecr.io/aci-tutorial-app:v1
+docker images
+docker push test878.azurecr.io/aci-tutorial-app:v1
+az acr update -n test878 --admin-enabled true 
